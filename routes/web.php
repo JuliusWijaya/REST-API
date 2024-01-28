@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use Illuminate\Routing\RouteAction;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -20,3 +22,8 @@ Route::get('/', function () {
 });
 
 Route::get('/send', [HomeController::class, 'send'])->name('home.send');
+
+Route::resource('user', UserController::class);
+// Route::get('/test', function(){
+//     return 'Berhasil';
+// });
